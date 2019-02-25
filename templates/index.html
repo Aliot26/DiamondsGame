@@ -1,10 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="container">
+        <form action="/game-m" method="GET">
+            <label></label>
+            <input class="form-control" type="text" placeholder="Gamer's name">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="playerCat" id="Radios1" value="cat"
+                       checked>
+                <label class="form-check-label" for="playerCat">
+                    <img src="{{ url_for('static', filename='image/cat.png') }}">
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="playerDog" id="Radios2" value="dog"
+                       checked>
+                <label class="form-check-label" for="playerDog">
+                     <img src="{{ url_for('static', filename='image/dog.png') }}">
+                </label>
+            </div>
+            <button class="btn-outline-dark" type="submit">Let's go!</button>
+        </form>
+    </div>
+{% endblock %}

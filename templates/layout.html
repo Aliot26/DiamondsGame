@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Gra</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/style.css') }}">
+    {% block head %} {% endblock %}
 </head>
 <body>
-
+<div class="container">
+<nav class="navbar navbar-light bg-light justify-content-center">
+    <a class="navbar-brand" href="#">
+        <img src="{{ url_for('static', filename='image/diamond.png') }}" width="70" height="70"
+             class="d-inline-block align-top"
+             alt="">
+    </a>
+    <h3>Diamonds hunter</h3>
+</nav>
+</div>
+{% block content %} {% endblock %}
 </body>
 </html>
