@@ -17,10 +17,15 @@ def show_mainpage():
         'username': username,
         'avatar': avatar
     }
+    col_num = 5
+    row_num = 5
 
     return render_template('gameplay.html',
-                           user=user)
+                           user=user,
+                           row_num=row_num,
+                           col_num=col_num)
 
 
 if __name__ == '__main__':
     app.run()
+

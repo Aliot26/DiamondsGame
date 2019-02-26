@@ -1,0 +1,58 @@
+.form-check img{
+
+}
+
+.animal-box{
+    margin: 20px;
+}
+
+.form-box{
+    padding-top: 20px;
+}
+
+.form-check-label {
+    padding-left: 20px;
+}
+
+.board{
+    margin-left: 50px;
+}
+
+.game-cell {
+    border: 1px solid black;
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    margin: 3px;
+    vertical-align: middle;
+}
+
+.grass{
+    background-image: url("../image/board.png");
+}
+
+.diamond{
+    background-image: url("../image/diamond.png");
+}
+
+.true1{
+    background-image: url("../image/true1.png");
+}
+
+.bomb{
+    background-image: url("../image/bomb.png");
+}
+
+.false{
+    background-image: url("../image/false.png");
+}
+
+.scoreboard{
+    margin-left: 50px;
+    width: 300px;
+    border: 1px solid black ;
+    border-radius: 5%;
+    text-align: center;
+    padding: 5%;
+}

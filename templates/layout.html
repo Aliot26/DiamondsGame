@@ -12,12 +12,13 @@
 <nav class="navbar navbar-light bg-light justify-content-center">
     <a class="navbar-brand" href="#">
         <img src="{{ url_for('static', filename='image/diamond.png') }}" width="70" height="70"
-             class="d-inline-block align-top"
+             class="d-inline-block"
              alt="">
     </a>
-    <h3>Diamonds hunter</h3>
+    <h3>Diamond hunt</h3>
 </nav>
 </div>
 {% block content %} {% endblock %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='script/dragscript.js') }}">
 </body>
 </html>
