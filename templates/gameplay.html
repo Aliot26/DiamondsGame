@@ -4,13 +4,13 @@
         <div class="row">
             <div class="player">
                 <div><img src="{{ url_for('static', filename='image/cat.png') }}"></div>
-                <div id="shovel" class="dragzone" ondragstart=""><img src="{{ url_for('static', filename='image/shovel.png') }}"></div>
+                <div class="dragzone"><img id="shovel" draggable="true" ondragstart="dragStart(event)" src="{{ url_for('static', filename='image/shovel.png') }}"></div>
             </div>
             <div class="board" id="game" onload="main()">
                 {% for row in range(5) %}
                     <div>
                         {% for col in range(5) %}
-                            <div class="game-cell grass dropzone" ondragover="allowDrop(event)"
+                            <div class="game-cell grass dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"
                                  data-coordinate-x="{{ col }}"
                                  data-coordinate-y="{{ row }}">
                             </div>

@@ -1,14 +1,14 @@
-let dragElem;
+let id;
 
 function allowDrop(e) {
     e.preventDefault();
 }
 
 function dragStart(e) {
-    dragElem = e.target.dragElem;
+    id = e.target.id;
 }
 
 function drop(e) {
-    e.target.append(document.querySelector("showel"))
-
+    e.target.append(document.getElementById(id));
 }
+
