@@ -1,6 +1,6 @@
 function main() {
     let allCells = document.querySelectorAll('.game-cell');
-    let arrDiamonds = [];
+    let arrDiamonds = ["11", "22"];
     let numDiamonds = 5;
     let rowNum = 5;
     let colNum = 5;
@@ -15,15 +15,6 @@ function main() {
         }
     }
 
-    arrDiamonds.forEach(function (item, i, arr) {
-        let coorX = item[0];
-        let coorY = item[1];
-        let cellToFill = document.querySelector(`.game-cell[data-coordinate-x="${coorX}"][data-coordinate-y="${coorY}"]`);
-        // cellToFill.classList.add('diamond');
-    });
-
-
-
 
     for (let oneCell of allCells) {
         oneCell.addEventListener("drop", function () {
@@ -37,9 +28,25 @@ function main() {
                 img.setAttribute('ondragstart', 'dragStart(event)');
                 img.setAttribute('src', 'static/image/shovel.png');
                 placeShovel.appendChild(img);
+                let coords = {};
+                coords.coordinateX = parseInt((oneCell.dataset.coordinateX), 10);
+                coords.coordinateY = parseInt((oneCell.dataset.coordinateY), 10);
+                for (let i = 0; i < arrDiamonds.length; i++) {
 
-                oneCell.classList.remove('grass');
-                oneCell.classList.add('false');
+                    let coorX = parseInt(arrDiamonds[i][0], 10);
+                    let coorY = parseInt(arrDiamonds[i][1], 10);
+                    if (coords.coordinateX === coorX && coords.coordinateY === coorY) {
+                        oneCell.classList.remove('grass');
+                        oneCell.classList.add('diamond');
+                        break;
+                    }
+                    // let cellToFill = document.querySelector(`.game-cell[data-coordinate-x="${coorX}"][data-coordinate-y="${coorY}"]`);
+                    // cellToFill.classList.add('diamond');
+                }
+                if (!oneCell.classList.contains('diamond')) {
+                    oneCell.classList.remove('grass');
+                    oneCell.classList.add('false');
+                }
             }, 1000)
         })
     }
