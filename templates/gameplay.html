@@ -10,7 +10,7 @@
                 {% for row in range(5) %}
                     <div>
                         {% for col in range(5) %}
-                            <div class="game-cell grass dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"
+                            <div wer="wer" class="game-cell grass dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"
                                  data-coordinate-x="{{ col }}"
                                  data-coordinate-y="{{ row }}">
                             </div>
@@ -20,8 +20,8 @@
             </div>
             <div class="scoreboard">
                 <div>{{ user['username'] }}</div>
-                <div>points</div>
-                <div>diamonds</div>
+                <div id="points">points</div>
+                <div id="diamonds">diamonds</div>
                 <div>message</div>
                 <button class="btn-outline-dark" type="submit">Reset board</button>
             </div>
