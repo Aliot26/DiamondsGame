@@ -9,6 +9,8 @@ function dragStart(e) {
 }
 
 function drop(e) {
-    e.target.append(document.getElementById(id));
+    if (e.target.classList.contains('grass')) {
+        e.target.append(document.getElementById(id));
+    }
 }
 
