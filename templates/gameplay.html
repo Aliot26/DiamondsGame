@@ -3,7 +3,11 @@
     <div class="container">
         <div class="row">
             <div id="player">
+                {%  if user['avatar'] == 'cat' %}
                 <div id="animal"><img src="{{ url_for('static', filename='image/cat.png') }}"></div>
+                {% elif user['avatar']=='dog' %}
+                <div id="animal"><img src="{{ url_for('static', filename='image/dog.png') }}"></div>
+                {% endif %}
                 <div class="dragzone" id="place-shovel"><img id="shovel" draggable="true" ondragstart="dragStart(event)" src="static/image/shovel.png"></div>
             </div>
             <div class="board" id="game">
@@ -23,7 +27,7 @@
                 <div id="points">points</div>
                 <div id="diamonds">diamonds</div>
                 <div>message</div>
-                <button class="btn-outline-dark" type="submit">Reset board</button>
+                <button id="reset" type="submit">Reset board</button>
             </div>
         </div>
     </div>

@@ -1,4 +1,5 @@
 from flask import Flask, url_for, flash, render_template, request
+import data_handler
 
 app = Flask(__name__)
 
@@ -19,6 +20,8 @@ def show_mainpage():
     }
     col_num = 5
     row_num = 5
+
+    data_handler.add_user_to_db(user)
 
     return render_template('gameplay.html',
                            user=user,

@@ -1,5 +1,11 @@
-.form-check img {
+body {
+    background-color: powderblue;
+}
 
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
 }
 
 .animal-box {
@@ -16,15 +22,16 @@
 
 .board {
     margin-left: 50px;
+    margin-top: 20px;
 }
 
 .game-cell {
-    border: 1px solid black;
+    border: 2px solid rebeccapurple;
     display: inline-block;
     width: 70px;
     height: 70px;
     text-align: center;
-    margin: 3px;
+    margin: 2px;
     vertical-align: middle;
 }
 
@@ -51,10 +58,13 @@
 .scoreboard {
     margin-left: 50px;
     width: 300px;
-    border: 1px solid black;
+    border: 3px solid green;
     border-radius: 5%;
     text-align: center;
-    padding: 5%;
+    padding: 3px;
+    background-color: rebeccapurple;
+    color: whitesmoke;
+    margin-top: 20px;
 }
 
 #shovel {
@@ -71,4 +81,22 @@
     width: 70px;
     height: 70px;
     padding-top: 11px;
+}
+.row {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#player {
+   margin-left: 100px;
+    margin-top: 35px;
+
+}
+
+.scoreboard button {
+    border: 2px solid whitesmoke;
+    color: whitesmoke;
+    border-radius: 10%;
+    background-color: mediumpurple;
+    float: bottom;
 }
