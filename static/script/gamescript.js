@@ -81,7 +81,7 @@ function setBomb() {
 
 function checkEmptyCellForBomb(arrDiamonds) {
     let bombCoords = setBomb();
-    if(arrDiamonds.includes(bombCoords)) {
+    if (arrDiamonds.includes(bombCoords)) {
         checkEmptyCellForBomb(arrDiamonds);
     }
     console.log(bombCoords);
@@ -104,6 +104,22 @@ function displayMessage(idElement, message) {
     document.getElementById(idElement).textContent = message;
 }
 
+function gameOver() {
+    setTimeout(function () {
+            alert("Game over");
+            window.location.reload(true);
+        }, 500
+    )
+}
+
+function changeAttrButton() {
+    let endGame = document.getElementById("end-game");
+    displayMessage("end-game", "End game");
+    endGame.removeAttribute('href');
+    endGame.setAttribute('href',  '/endgame');
+}
+
+
 function main() {
     const grass = 'grass';
     const diamond = 'diamond';
@@ -113,14 +129,15 @@ function main() {
 
     let allCells = document.querySelectorAll('.game-cell');
     let arrDiamonds = ["11", "22", "33", "00", "13"];// for test
+    let bombCoord = "44";// for test
     let numHiddenDiamonds = 5;
     let countScore = 0;
 
     let tabCount = document.getElementById('points');
     let tabDiamond = document.getElementById('diamonds');
 
-    arrDiamonds = setDiamonds(arrDiamonds, numHiddenDiamonds);
-    let bombCoord = checkEmptyCellForBomb(arrDiamonds);
+    // arrDiamonds = setDiamonds(arrDiamonds, numHiddenDiamonds);    IT'S WORK!!!
+    // let bombCoord = checkEmptyCellForBomb(arrDiamonds);
 
     for (let oneCell of allCells) {
         oneCell.addEventListener("drop", function _listener() {
@@ -134,18 +151,18 @@ function main() {
                     tabDiamond.textContent = "" + numHiddenDiamonds;
                 } else if (checkBombExistence(bombCoord, oneCell)) {
                     changeClass(oneCell, grass, bomb);
-                    alert("Game over");
                     displayMessage(message, "Game over");
-                    oneCell.removeEventListener("drop", _listener);
+                    gameOver();
                 } else if (!oneCell.classList.contains('diamond')
                     && arrDiamonds.length !== 0
-                    && !oneCell.classList.contains('bomb') ) {
+                    && !oneCell.classList.contains('bomb')) {
                     changeClass(oneCell, grass, empty_box);
                     countScore -= 100;
                     tabCount.textContent = "" + countScore;
                 }
                 oneCell.removeEventListener("drop", _listener);
                 if (checkWinConditions(arrDiamonds)) {
+                    changeAttrButton();
                     displayMessage(message, "You won")
                 }
             }, 500)
