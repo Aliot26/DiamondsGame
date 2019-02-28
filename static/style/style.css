@@ -133,10 +133,38 @@ body {
 
 }
 
+.user-data{
+    margin-top: 15px;
+    padding: 15px;
+    border-bottom: dotted 1px whitesmoke;
+    color: #e3e4ea;
+}
+
+.gameplay {
+    margin-top: 12px;
+    padding: 12px;
+}
+
+
 .scoreboard button {
     border: 2px solid whitesmoke;
     color: whitesmoke;
     border-radius: 15px;
     background-color: mediumpurple;
     vertical-align: bottom;
+    margin-top: 12px;
+    padding: 12px;
+
+}
+
+
+th {
+    padding: 3px;
+    width: 120px;
+    color: rebeccapurple;
+}
+
+td {
+    padding: 3px;
+    align-content: center;
 }

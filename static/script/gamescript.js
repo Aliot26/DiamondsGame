@@ -146,9 +146,9 @@ function main() {
                 if (checkDiamondExistence(arrDiamonds, oneCell)) {
                     changeClass(oneCell, grass, diamond);
                     countScore += 1000;
-                    tabCount.textContent = "" + countScore;
+                    tabCount.textContent = "" + countScore + "  points";
                     numHiddenDiamonds -= 1;
-                    tabDiamond.textContent = "" + numHiddenDiamonds;
+                    tabDiamond.textContent = "" + numHiddenDiamonds + "  diamonds left";
                 } else if (checkBombExistence(bombCoord, oneCell)) {
                     changeClass(oneCell, grass, bomb);
                     displayMessage(message, "Game over");
@@ -158,7 +158,7 @@ function main() {
                     && !oneCell.classList.contains('bomb')) {
                     changeClass(oneCell, grass, empty_box);
                     countScore -= 100;
-                    tabCount.textContent = "" + countScore;
+                    tabCount.textContent = "" + countScore + "  points";
                 }
                 oneCell.removeEventListener("drop", _listener);
                 if (checkWinConditions(arrDiamonds)) {
