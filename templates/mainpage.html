@@ -1,28 +1,24 @@
 {% extends 'layout.html' %}
 {% block content %}
-    <div class="container">
+    <div id="entire_form">
         <form action="/login" method="POST">
-            <div class="form-row">
-                <div class="form-group col-md-3 form-box">
-                    <label>Name</label>
-                    <input class="form-control" type="text" name="username" placeholder="Player's name">
-                </div>
-                <div class="form-check col-md-3 animal-box">
-                    <input class="form-check-input" type="radio" name="avatar" value="cat"
-                           checked>
-                    <label class="form-check-label" for="playerCat">
-                        <img src="{{ url_for('static', filename='image/cat.png') }}">
-                    </label>
-                </div>
-                 <div class="form-check col-md-3 animal-box">
-                    <input class="form-check-input" type="radio" name="avatar" value="dog"
-                           checked>
-                    <label class="form-check-label" for="playerDog">
-                        <img src="{{ url_for('static', filename='image/dog.png') }}">
-                    </label>
-                </div>
+                <input type="text" name="username" id="username" placeholder="What's your name ?" width="50%">
+            <br>
+            <br>
+
+                <label for="avatar" style="color:rebeccapurple; margin-left: 20px">Choose your avatar</label><br><br>
+                <div class="form_cols">
+                <input type="radio" name="avatar" id="avatar" value="cat" checked> <img src="{{ url_for('static', filename='image/cat.png') }}" alt="CAT">
             </div>
-            <button class="btn-outline-dark" type="submit">Let's go!</button>
+            <div class="form_cols">
+            <input type="radio" name="avatar" id="avatar" value="dog" checked style="margin-left: 30px"> <img src="{{ url_for('static', filename='image/dog.png') }}" alt="DOG">
+            </div>
+                <br><br><br><br>
+            <div style="clear:both">
+                <button type="submit">Let's go!</button>
+            </div>
         </form>
+        </div>
     </div>
+
 {% endblock %}
