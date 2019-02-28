@@ -17,7 +17,7 @@ DROP TABLE IF EXISTS user_score;
 CREATE TABLE user_score (
   id serial PRIMARY KEY,
   username varchar(250) NOT NULL,
-  score int,
+  score integer,
   date_time timestamp without time zone
 )
 

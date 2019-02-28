@@ -115,8 +115,20 @@ function gameOver() {
 function changeAttrButton() {
     let endGame = document.getElementById("end-game");
     displayMessage("end-game", "End game");
-    endGame.removeAttribute('href');
-    endGame.setAttribute('href',  '/endgame');
+    endGame.removeAttribute("href");
+    endGame.setAttribute("href",  "/endgame");
+    endGame.setAttribute("onclick","sendData()");
+}
+
+function sendData(){
+     let xhr = new XMLHttpRequest();
+     let dataNumber = document.getElementById("points");
+     let dataScore = dataNumber.textContent;
+     const data = new FormData();
+     data.append('score', dataScore);
+     xhr.open("POST", "/todatabase");
+     // xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+     xhr.send(data);
 }
 
 
@@ -163,6 +175,7 @@ function main() {
                 oneCell.removeEventListener("drop", _listener);
                 if (checkWinConditions(arrDiamonds)) {
                     changeAttrButton();
+
                     displayMessage(message, "You won")
                 }
             }, 500)

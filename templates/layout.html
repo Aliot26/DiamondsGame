@@ -7,12 +7,13 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/style.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
     {% block head %} {% endblock %}
+
 </head>
 <body>
 <div id="navbar">
-    <h1 align="center"> <img src="{{ url_for('static', filename='image/diamond2.png') }}" width="70" height="70"
-               class="d-inline-block"
-               alt="">Diamond hunt</h1>
+    <h1 align="center"><img src="{{ url_for('static', filename='image/diamond2.png') }}" width="70" height="70"
+                            class="d-inline-block"
+                            alt="">Diamond hunt</h1>
 </div>
 
 {% block content %} {% endblock %}
