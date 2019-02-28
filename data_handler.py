@@ -8,3 +8,24 @@ def add_user_to_db(cursor, user):
                        
                     """,
                     {'username': user['username']})
+
+
+@db_connection.connection_handler
+def add_user_score_to_db(cursor, user):
+    cursor.execute("""
+                    INSERT INTO user_score(score, date_time)
+                    VALUES (%(score)s, now())
+                    """,
+                   {'score':user['score']})
+
+
+@db_connection.connection_handler
+def select_5_highest_scores(cursor):
+    cursor.execute("""
+                    SELECT username, score FROM user_score 
+                    ORDER BY score desc 
+                    limit 5
+    
+                    """)
+    scoreboard = cursor.fetchall()
+    return scoreboard
