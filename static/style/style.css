@@ -100,3 +100,8 @@ body {
     background-color: mediumpurple;
     float: bottom;
 }
+
+.user-data{
+    margin-top: 40px;
+    color: #DDECEE;
+}
