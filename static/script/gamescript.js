@@ -69,15 +69,47 @@ function checkDiamondExistence(arrDiamonds, oneCell) {
     return false;
 }
 
+function setBomb() {
+    const rowNum = 5;
+    const colNum = 5;
+
+    let coordX = Math.floor(Math.random() * colNum);
+    let coordY = Math.floor(Math.random() * rowNum);
+
+    return '' + coordX + coordY;
+}
+
+function checkEmptyCellForBomb(arrDiamonds) {
+    let bombCoords = setBomb();
+    if(arrDiamonds.includes(bombCoords)) {
+        checkEmptyCellForBomb(arrDiamonds);
+    }
+    console.log(bombCoords);
+    return bombCoords;
+}
+
+function checkBombExistence(bombCoord, oneCell) {
+    let coordBombX = parseInt(bombCoord[0], 10);
+    let coordBombY = parseInt(bombCoord[1], 10);
+    return getCoordinatesDropCell(oneCell).coordinateX === coordBombX
+        && getCoordinatesDropCell(oneCell).coordinateY === coordBombY;
+}
+
 function changeClass(oneCell, oldClass, newClass) {
     oneCell.classList.remove(oldClass);
     oneCell.classList.add(newClass);
+}
+
+function displayMessage(idElement, message) {
+    document.getElementById(idElement).textContent = message;
 }
 
 function main() {
     const grass = 'grass';
     const diamond = 'diamond';
     const empty_box = 'false';
+    const bomb = 'bomb';
+    const message = 'message';
 
     let allCells = document.querySelectorAll('.game-cell');
     let arrDiamonds = ["11", "22", "33", "00", "13"];// for test
@@ -88,6 +120,8 @@ function main() {
     let tabDiamond = document.getElementById('diamonds');
 
     arrDiamonds = setDiamonds(arrDiamonds, numHiddenDiamonds);
+    let bombCoord = checkEmptyCellForBomb(arrDiamonds);
+
     for (let oneCell of allCells) {
         oneCell.addEventListener("drop", function _listener() {
             setTimeout(function () {
@@ -98,15 +132,21 @@ function main() {
                     tabCount.textContent = "" + countScore;
                     numHiddenDiamonds -= 1;
                     tabDiamond.textContent = "" + numHiddenDiamonds;
-                } else if (!oneCell.classList.contains('diamond') && arrDiamonds.length !== 0) {
+                } else if (checkBombExistence(bombCoord, oneCell)) {
+                    changeClass(oneCell, grass, bomb);
+                    alert("Game over");
+                    displayMessage(message, "Game over");
+                    oneCell.removeEventListener("drop", _listener);
+                } else if (!oneCell.classList.contains('diamond')
+                    && arrDiamonds.length !== 0
+                    && !oneCell.classList.contains('bomb') ) {
                     changeClass(oneCell, grass, empty_box);
                     countScore -= 100;
                     tabCount.textContent = "" + countScore;
                 }
                 oneCell.removeEventListener("drop", _listener);
                 if (checkWinConditions(arrDiamonds)) {
-                    let tabMessage = document.getElementById('message');
-                    tabMessage.textContent = "You won";
+                    displayMessage(message, "You won")
                 }
             }, 500)
         }, true)
