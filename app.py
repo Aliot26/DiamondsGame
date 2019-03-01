@@ -37,7 +37,7 @@ def show_mainpage():
     col_num = 5
     row_num = 5
 
-    data_handler.add_user_to_db(user)
+    # data_handler.add_user_to_db(user)
 
     return render_template('gameplay.html',
                            user=user,

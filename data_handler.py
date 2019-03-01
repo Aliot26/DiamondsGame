@@ -1,22 +1,23 @@
 import db_connection
 
+
 @db_connection.connection_handler
 def add_user_to_db(cursor, user):
-    cursor.execute ("""
+    cursor.execute("""
                     INSERT INTO user_score(username)
                     VALUES (%(username)s)
                        
                     """,
-                    {'username': user['username']})
+                   {'username': user['username']})
 
 
 @db_connection.connection_handler
 def add_user_score_to_db(cursor, user):
     cursor.execute("""
-                    INSERT INTO user_score(username, score, date_time)
-                    VALUES (%(username)s, %(score)s, now())                     
+                    INSERT INTO user_score(username,score, date_time)
+                    VALUES (%(username)s, %(score)s, now()) 
                     """,
-                   {'score':user['score'], 'username':user['username']})
+                   {'score': user['score'], 'username': user['username']})
 
 
 @db_connection.connection_handler

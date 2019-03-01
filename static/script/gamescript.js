@@ -140,16 +140,16 @@ function main() {
     const message = 'message';
 
     let allCells = document.querySelectorAll('.game-cell');
-    let arrDiamonds = ["11", "22", "33", "00", "13"];// for test
-    let bombCoord = "44";// for test
+    let arrDiamonds = [];//["11", "22", "33", "00", "13"];// for test
+    //let bombCoord = "44";// for test
     let numHiddenDiamonds = 5;
     let countScore = 0;
 
     let tabCount = document.getElementById('points');
     let tabDiamond = document.getElementById('diamonds');
 
-    // arrDiamonds = setDiamonds(arrDiamonds, numHiddenDiamonds);    IT'S WORK!!!
-    // let bombCoord = checkEmptyCellForBomb(arrDiamonds);
+    arrDiamonds = setDiamonds(arrDiamonds, numHiddenDiamonds);
+    let bombCoord = checkEmptyCellForBomb(arrDiamonds);
 
     for (let oneCell of allCells) {
         oneCell.addEventListener("drop", function _listener() {
