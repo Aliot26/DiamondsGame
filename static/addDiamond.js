@@ -1,13 +1,17 @@
 
-function checkIfOnline() {
-	console.log('beforeIf');
-	if (!window.navigator.onLine) {
-		clearContent();
-		addDiamond();
-	} else {
-		console.log('online');
-	}
-}
+// function checkIfOnline() {
+// 	console.log('beforeIf');
+// 	if (!window.navigator.onLine) {
+// 		clearContent();
+// 		addDiamond();
+// 	} else {
+// 		console.log('online');
+// 	}
+// }
+
+window.addEventListener('offline', function(e) { console.log('offline'); });
+
+window.addEventListener('online', function(e) { console.log('online'); });
 
 function clearContent() {
 	let content = document.getElementById('offline-content');
@@ -26,4 +30,4 @@ function addDiamond() {
 	content.appendChild(diamondImage);
 }
 
-checkIfOnline();
+// checkIfOnline();
