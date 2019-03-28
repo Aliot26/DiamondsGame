@@ -230,7 +230,7 @@ function checkIfOnline() {
         content.innerHTML = '';
 
         let diamondImage = document.createElement('img');
-        let diamondPath = 'diamond_pwa.png';
+        let diamondPath = '/static/diamond_pwa.png';
 
         diamondImage.classList.add('diamondImage');
         diamondImage.setAttribute('src', diamondPath);
