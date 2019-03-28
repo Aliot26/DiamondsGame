@@ -168,3 +168,13 @@ td {
     padding: 3px;
     align-content: center;
 }
+
+.diamondImage {
+    transition: all 2s ease-in-out;
+    perspective: 800px;
+    perspective-origin: 50% 100px;
+}
+
+.diamondImage:hover {
+    transform: rotateY(180deg);
+}
