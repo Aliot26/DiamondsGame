@@ -1,5 +1,6 @@
 
 function checkIfOnline() {
+	console.log('beforeIf');
 	if (navigator.online) {
 		console.log('online')
 	} else {
