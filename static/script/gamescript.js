@@ -225,8 +225,20 @@ function checkIfOnline() {
 	console.log('beforeIf');
 	if (!navigator.onLine) {
 		console.log('offline');
-        clearContent();
-        addDiamond();
+        let content = document.getElementById('offline-content');
+        console.log('content', content)
+        while (content.firstChild) {
+            content.remove(content.firstChild)
+        }
+
+        let diamondImage = content.createElement('img');
+        let diamondPath = 'static/image/diamond_pwa.png';
+
+        diamondImage.classList.add('diamondImage');
+        diamondImage.setAttribute('src', diamondPath);
+        diamondImage.setAttribute('alt', 'diamond image');
+
+        content.appendChild(diamondImage);
 	} else {
 		console.log('online');
         main();
