@@ -198,12 +198,30 @@ function main() {
 // If it’s false (default), then the handler is set on the bubbling phase.
 // If it’s true, then the handler is set on the capturing phase.
 
+function clearContent() {
+    let content = document.getElementById('offline-content');
+    content.innerHTML = '';
+}
+
+function addDiamond() {
+    let content = document.getElementById('offline-content');
+    let diamondImage = content.createElement('img');
+    let diamondPath = 'static/image/diamond_pwa.png';
+
+    diamondImage.classList.add('diamondImage');
+    diamondImage.setAttribute('src', diamondPath);
+    diamondImage.setAttribute('alt', 'diamond image');
+
+    content.appendChild(diamondImage);
+}
 
 
 function checkIfOnline() {
 	console.log('beforeIf');
 	if (!navigator.onLine) {
 		console.log('offline');
+        clearContent();
+        addDiamond();
 	} else {
 		console.log('online');
         main();
