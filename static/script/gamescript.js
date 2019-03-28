@@ -226,7 +226,7 @@ function checkIfOnline() {
 	if (!navigator.onLine) {
 		console.log('offline');
         let content = document.getElementById('offline-content');
-        console.log('content', content);
+        console.log(typeof content);
         while (content.firstChild) {
             content.remove(content.firstChild)
         }
