@@ -203,6 +203,7 @@ function clearContent() {
     while (content.firstChild) {
         content.remove(content.firstChild)
     }
+    console.log('clear');
 }
 
 function addDiamond() {
@@ -215,6 +216,8 @@ function addDiamond() {
     diamondImage.setAttribute('alt', 'diamond image');
 
     content.appendChild(diamondImage);
+
+    console.log('add');
 }
 
 
