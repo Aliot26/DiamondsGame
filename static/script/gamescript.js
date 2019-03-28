@@ -226,7 +226,7 @@ function checkIfOnline() {
 	if (!navigator.onLine) {
 		console.log('offline');
         let content = document.getElementById('offline-content');
-        console.log('content', content)
+        console.log('content', content);
         while (content.firstChild) {
             content.remove(content.firstChild)
         }
@@ -239,6 +239,7 @@ function checkIfOnline() {
         diamondImage.setAttribute('alt', 'diamond image');
 
         content.appendChild(diamondImage);
+        console.log('endfunction');
 	} else {
 		console.log('online');
         main();
