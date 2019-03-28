@@ -1,11 +1,11 @@
 
 function checkIfOnline() {
 	console.log('beforeIf');
-	if (navigator.online) {
-		console.log('online')
-	} else {
+	if (!navigator.online) {
 		clearContent();
 		addDiamond();
+	} else {
+		console.log('online');
 	}
 }
 
