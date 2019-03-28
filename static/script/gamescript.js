@@ -1,5 +1,3 @@
-import {clearContent, addDiamond} from "../addDiamond.js";
-
 let id;
 
 function allowDrop(e) {
@@ -200,16 +198,4 @@ function main() {
 // If it’s false (default), then the handler is set on the bubbling phase.
 // If it’s true, then the handler is set on the capturing phase.
 
-function checkIfOnline() {
-    console.log('beforeIf');
-    if (navigator.online) {
-        console.log('online');
-        main();
-    } else {
-        console.log('offline');
-        clearContent();
-        addDiamond();
-    }
-}
-
-checkIfOnline();
+main();

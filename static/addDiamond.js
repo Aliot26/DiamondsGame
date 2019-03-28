@@ -1,5 +1,13 @@
-export {clearContent, addDiamond}
 
+function checkIfOnline() {
+	console.log('beforeIf');
+	if (!window.navigator.onLine) {
+		clearContent();
+		addDiamond();
+	} else {
+		console.log('online');
+	}
+}
 
 function clearContent() {
 	let content = document.getElementById('offline-content');
@@ -17,3 +25,5 @@ function addDiamond() {
 
 	content.appendChild(diamondImage);
 }
+
+checkIfOnline();
