@@ -11,9 +11,7 @@ function checkIfOnline() {
 
 function clearContent() {
 	let content = document.getElementById('offline-content');
-	while (content.firstChild) {
-		content.remove(content.firstChild);
-	}
+	content.innerHTML = '';
 }
 
 function addDiamond() {
