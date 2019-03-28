@@ -232,9 +232,14 @@ function checkIfOnline() {
         let diamondImage = document.createElement('img');
         let diamondPath = '/static/diamond_pwa.png';
         let diamondDiv = document.createElement('div');
+        let message = document.querySelector('h2');
+
+        message.removeAttribute('style');
+        message.setAttribute('style', 'display: block');
 
         diamondDiv.setAttribute('id', 'diamondDiv');
         content.appendChild(diamondDiv);
+
 
         diamondImage.classList.add('diamondImage');
         diamondImage.setAttribute('src', diamondPath);

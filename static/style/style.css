@@ -3,7 +3,9 @@ body {
     font-family: 'Coiny';
 }
 
-
+h2 {
+    color: #fff;
+}
 
 .container {
     margin-right: auto;
