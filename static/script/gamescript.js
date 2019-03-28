@@ -200,7 +200,9 @@ function main() {
 
 function clearContent() {
     let content = document.getElementById('offline-content');
-    content.innerHTML = '';
+    while (content.firstChild) {
+        content.remove(content.firstChild)
+    }
 }
 
 function addDiamond() {
