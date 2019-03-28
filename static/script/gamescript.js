@@ -227,9 +227,10 @@ function checkIfOnline() {
 		console.log('offline');
         let content = document.getElementById('offline-content');
         console.log(typeof content);
+        content.innerHTML = '';
 
         let diamondImage = document.createElement('img');
-        let diamondPath = 'static/image/diamond_pwa.png';
+        let diamondPath = 'image/diamond_pwa.png';
 
         diamondImage.classList.add('diamondImage');
         diamondImage.setAttribute('src', diamondPath);
