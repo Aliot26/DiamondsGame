@@ -56,6 +56,10 @@ def endgame():
 def sw():
     return app.send_static_file('service-worker.js')
 
+@app.route('/login/service-worker.js', methods=['GET', 'POST'])
+def login_sw():
+    return app.send_static_file('service-worker.js')
+
 
 @app.route('/manifest.json')
 def manifest():

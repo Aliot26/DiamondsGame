@@ -3,7 +3,6 @@ const CACHE_NAME = 'wpisz-tutaj-dowolny-string';
 // List of files which are store in cache.
 let filesToCache = [
 	'/',
-	'/login',
 	'/static/diamond.js',
 	'/static/offline.css',
 	'/static/offline_diamond.html'
