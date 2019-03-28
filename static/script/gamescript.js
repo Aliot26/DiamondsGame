@@ -84,7 +84,6 @@ function checkEmptyCellForBomb(arrDiamonds) {
     if (arrDiamonds.includes(bombCoords)) {
         checkEmptyCellForBomb(arrDiamonds);
     }
-    console.log(bombCoords);
     return bombCoords;
 }
 
@@ -203,7 +202,6 @@ function clearContent() {
     while (content.firstChild) {
         content.remove(content.firstChild)
     }
-    console.log('clear');
 }
 
 function addDiamond() {
@@ -217,16 +215,13 @@ function addDiamond() {
 
     content.appendChild(diamondImage);
 
-    console.log('add');
+
 }
 
 
 function checkIfOnline() {
-	console.log('beforeIf');
 	if (!navigator.onLine) {
-		console.log('offline');
         let content = document.getElementById('offline-content');
-        console.log(typeof content);
         content.innerHTML = '';
 
         let diamondImage = document.createElement('img');
@@ -246,9 +241,7 @@ function checkIfOnline() {
         diamondImage.setAttribute('alt', 'diamond image');
 
         diamondDiv.appendChild(diamondImage);
-        console.log('endfunction');
 	} else {
-		console.log('online');
         main();
 	}
 }
