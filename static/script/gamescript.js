@@ -231,12 +231,16 @@ function checkIfOnline() {
 
         let diamondImage = document.createElement('img');
         let diamondPath = '/static/diamond_pwa.png';
+        let diamondDiv = document.createElement('div');
+
+        diamondDiv.setAttribute('id', 'diamondDiv');
+        content.appendChild(diamondDiv);
 
         diamondImage.classList.add('diamondImage');
         diamondImage.setAttribute('src', diamondPath);
         diamondImage.setAttribute('alt', 'diamond image');
 
-        content.appendChild(diamondImage);
+        diamondDiv.appendChild(diamondImage);
         console.log('endfunction');
 	} else {
 		console.log('online');

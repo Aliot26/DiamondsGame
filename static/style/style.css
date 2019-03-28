@@ -169,6 +169,10 @@ td {
     align-content: center;
 }
 
+#diamondDiv {
+    margin: 0 auto;
+}
+
 .diamondImage {
     width: 300px;
     height: 300px;
