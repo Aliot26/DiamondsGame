@@ -18,8 +18,12 @@
                             alt="">Diamond hunt</h1>
 </div>
 
-{% block content %} {% endblock %}
+<div id="offline-content">
+
+    {% block content %} {% endblock %}
+</div>
 <script src="{{ url_for('static', filename='script/gamescript.js') }}"></script>
 <script src="{{ url_for('static', filename='diamond.js') }}" type="text/javascript"></script>
+<script src="{{ url_for('static', filename='addDiamond.js') }}" type="text/javascript"></script>
 </body>
 </html>

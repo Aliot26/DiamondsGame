@@ -5,7 +5,8 @@ let filesToCache = [
 	'/',
 	'/static/diamond.js',
 	'/static/offline.css',
-	'/static/offline_diamond.html'
+	'/static/offline_diamond.html',
+	'/static/addDiamond.js'
 ];
 
 self.addEventListener('install', function (evt) {
