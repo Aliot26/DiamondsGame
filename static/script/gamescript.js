@@ -228,7 +228,7 @@ function checkIfOnline() {
         let content = document.getElementById('offline-content');
         console.log(typeof content);
 
-        let diamondImage = content.createElement('img');
+        let diamondImage = document.createElement('img');
         let diamondPath = 'static/image/diamond_pwa.png';
 
         diamondImage.classList.add('diamondImage');
