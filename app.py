@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, send_from_directory
 import re
 
 import data_handler
@@ -50,6 +50,16 @@ def endgame():
     scoreboard = data_handler.select_5_highest_scores()
     return render_template('scoreboard.html',
                            scoreboard=scoreboard)
+
+
+@app.route('/service-worker.js', methods=['GET'])
+def sw():
+    return app.send_static_file('service-worker.js')
+
+
+@app.route('/manifest.json')
+def manifest():
+    return send_from_directory('static', 'manifest.json')
 
 
 if __name__ == '__main__':
