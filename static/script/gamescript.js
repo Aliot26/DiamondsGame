@@ -198,4 +198,16 @@ function main() {
 // If it’s false (default), then the handler is set on the bubbling phase.
 // If it’s true, then the handler is set on the capturing phase.
 
-main();
+
+
+function checkIfOnline() {
+	console.log('beforeIf');
+	if (!navigator.onLine) {
+		console.log('offline');
+	} else {
+		console.log('online');
+        main();
+	}
+}
+
+checkIfOnline();
