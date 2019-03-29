@@ -199,21 +199,28 @@ function main() {
 
 function clearContent() {
     let content = document.getElementById('offline-content');
-    while (content.firstChild) {
-        content.remove(content.firstChild)
-    }
+    content.innerHTML = '';
 }
 
 function addDiamond() {
     let content = document.getElementById('offline-content');
-    let diamondImage = content.createElement('img');
-    let diamondPath = 'static/image/diamond_pwa.png';
+    let diamondImage = document.createElement('img');
+    let diamondPath = '/static/diamond_pwa.png';
+    let diamondDiv = document.createElement('div');
+    let message = document.querySelector('h2');
+
+    message.removeAttribute('style');
+    message.setAttribute('style', 'display: block');
+
+    diamondDiv.setAttribute('id', 'diamondDiv');
+    content.appendChild(diamondDiv);
+
 
     diamondImage.classList.add('diamondImage');
     diamondImage.setAttribute('src', diamondPath);
     diamondImage.setAttribute('alt', 'diamond image');
 
-    content.appendChild(diamondImage);
+    diamondDiv.appendChild(diamondImage);
 
 
 }
@@ -221,26 +228,10 @@ function addDiamond() {
 
 function checkIfOnline() {
 	if (!navigator.onLine) {
-        let content = document.getElementById('offline-content');
-        content.innerHTML = '';
 
-        let diamondImage = document.createElement('img');
-        let diamondPath = '/static/diamond_pwa.png';
-        let diamondDiv = document.createElement('div');
-        let message = document.querySelector('h2');
+	    clearContent();
+        addDiamond();
 
-        message.removeAttribute('style');
-        message.setAttribute('style', 'display: block');
-
-        diamondDiv.setAttribute('id', 'diamondDiv');
-        content.appendChild(diamondDiv);
-
-
-        diamondImage.classList.add('diamondImage');
-        diamondImage.setAttribute('src', diamondPath);
-        diamondImage.setAttribute('alt', 'diamond image');
-
-        diamondDiv.appendChild(diamondImage);
 	} else {
         main();
 	}
