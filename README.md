@@ -29,5 +29,8 @@ practice skills with:
 
 ## Screenshots:
 Start screen:
-
-https://github.com/Aliot26/DiamondsGame/blob/master/static/image/screenshots/start.png?raw=true
+![ScreenShot](https://github.com/Aliot26/DiamondsGame/blob/master/static/image/screenshots/start1.png?raw=true)
+Game screen:
+![ScreenShot](https://github.com/Aliot26/DiamondsGame/blob/master/static/image/screenshots/game2.png?raw=true)
+Score screen:
+![ScreenShot](https://github.com/Aliot26/DiamondsGame/blob/master/static/image/screenshots/score.png?raw=true)
