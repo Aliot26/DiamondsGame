@@ -6,7 +6,7 @@ Small browser game for searching diamonds.
 
 ## The goal was to:
 
-practice front-end skills:
+practice skills with:
 - JavaScript
 - AJAX
 - HTML/CSS
@@ -29,3 +29,4 @@ practice front-end skills:
 
 ## Screenshots:
 Start screen:
+(https://github.com/Aliot26/DiamondsGame/blob/master/static/image/screenshots/start.png)
