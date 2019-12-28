@@ -29,4 +29,4 @@ practice skills with:
 
 ## Screenshots:
 Start screen:
-(https://github.com/Aliot26/DiamondsGame/blob/master/static/image/screenshots/start.png)
+!(https://github.com/Aliot26/DiamondsGame/blob/master/static/image/screenshots/start.png)
