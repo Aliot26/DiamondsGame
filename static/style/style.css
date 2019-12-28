@@ -4,7 +4,6 @@ body {
 }
 
 
-
 .container {
     margin-right: auto;
     margin-left: auto;
@@ -27,10 +26,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width:50%;
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
-    padding:10px;
+    padding: 10px;
     align-content: center;
     border: 3px solid rebeccapurple;
     border-radius: 15px;
@@ -40,17 +39,17 @@ body {
 
 #centering {
     margin-right: auto;
-    margin-left:auto ;
-    padding:15px;
+    margin-left: auto;
+    padding: 15px;
 }
 
 .form_cols {
-    float:left
+    float: left
 }
 
-#entire_form button{
+#entire_form button {
     background-color: rgba(0, 176, 0, 0.43);
-    color:rebeccapurple;
+    color: rebeccapurple;
     border: 2px solid rebeccapurple;
     border-radius: 15px;
     margin-left: 50px;
@@ -118,22 +117,23 @@ body {
     height: 70px;
     padding-top: 11px;
 }
+
 .row {
     margin-left: auto;
     margin-right: auto;
 }
 
 #player {
-   margin-left: 120px;
+    margin-left: 120px;
     margin-top: 35px;
-    border:solid 2px green;
-    background-color:#e3e4ea;
-    border-radius: 15px ;
+    border: solid 2px green;
+    background-color: #e3e4ea;
+    border-radius: 15px;
     padding: 10px;
 
 }
 
-.user-data{
+.user-data {
     margin-top: 15px;
     padding: 15px;
     border-bottom: dotted 1px whitesmoke;
@@ -167,4 +167,22 @@ th {
 td {
     padding: 3px;
     align-content: center;
+}
+
+#diamondDiv {
+    align-content: center;
+}
+
+#diamond {
+    margin: 0px auto;
+    align-content: center;
+    width: 400px;
+    height: 400px;
+    transition: all 2s ease-in-out;
+    perspective: 800px;
+    perspective-origin: 50% 100px;
+}
+
+#diamond:hover {
+    transform: rotateY(180deg);
 }

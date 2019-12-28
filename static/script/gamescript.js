@@ -133,15 +133,15 @@ function sendData(){
 
 
 function main() {
-    const grass = 'grass';
+    const grass = 'gr.ass';
     const diamond = 'diamond';
     const empty_box = 'false';
     const bomb = 'bomb';
     const message = 'message';
 
     let allCells = document.querySelectorAll('.game-cell');
-    let arrDiamonds = [];//["11", "22", "33", "00", "13"];// for test
-    //let bombCoord = "44";// for test
+    let arrDiamonds = ["11", "22", "33", "00", "13"];// for test
+    let bombCoord = "44";// for test
     let numHiddenDiamonds = 5;
     let countScore = 0;
 
@@ -149,7 +149,7 @@ function main() {
     let tabDiamond = document.getElementById('diamonds');
 
     arrDiamonds = setDiamonds(arrDiamonds, numHiddenDiamonds);
-    let bombCoord = checkEmptyCellForBomb(arrDiamonds);
+    //let bombCoord = checkEmptyCellForBomb(arrDiamonds);
 
     for (let oneCell of allCells) {
         oneCell.addEventListener("drop", function _listener() {

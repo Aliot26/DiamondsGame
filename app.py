@@ -12,6 +12,11 @@ def index():
     return render_template('mainpage.html')
 
 
+@app.route('/dia')
+def dia():
+    return render_template('diamond.html')
+
+
 @app.route('/todatabase', methods=['POST'])
 def todatabase():
     score = request.values.get('score', '')
